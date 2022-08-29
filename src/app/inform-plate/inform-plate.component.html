@@ -1,0 +1,13 @@
+<form [formGroup]="formGroup" (submit)="insert()">
+  <div>
+    <div>
+      <label>Placa</label>
+    </div>
+    <div class="input-place">
+      <input formControlName="plate" placeholder="Informa a placa">
+    </div>
+    <div class="button-insert">
+      <button>Inserir</button>
+    </div>
+  </div>
+</form>
