@@ -1,5 +1,6 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
+import { InformPlate } from "../interfaces/inform-plate";
 
 @Injectable({
   providedIn: 'root'
@@ -7,7 +8,7 @@ import { Injectable } from "@angular/core";
 export class InformPlateService {
   constructor(private httpClient: HttpClient) {}
 
-  public inserirPlaca(plate: string) {
-    return this.httpClient.post<any>("http://localhost:8080/plate", plate);
+  public inserirPlaca(plate: InformPlate) {
+    return this.httpClient.post<InformPlate>("http://localhost:8080/plate", {plate});
   }
 }

@@ -1,4 +1,4 @@
-<form [formGroup]="formGroup" (submit)="insert()">
+<form [formGroup]="formGroup" >
   <div>
     <div>
       <label>Placa</label>
@@ -7,7 +7,7 @@
       <input formControlName="plate" placeholder="Informa a placa">
     </div>
     <div class="button-insert">
-      <button>Inserir</button>
+      <button (click)="insert()">Inserir</button>
     </div>
   </div>
 </form>
