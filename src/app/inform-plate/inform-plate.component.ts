@@ -13,7 +13,7 @@ export class InformPlateComponent implements OnInit {
 
   constructor(
     private informPlateService: InformPlateService,
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
     ) {}
 
   ngOnInit(): void {
@@ -25,5 +25,12 @@ export class InformPlateComponent implements OnInit {
   public insert() {
     const plate = this.formGroup.get('plate')?.value as InformPlate;
     return this.informPlateService.inserirPlaca(plate).subscribe();
+  }
+
+  public validateInput() {
+    const plate = this.formGroup.get('plate')?.value;
+    if(plate == undefined || plate == "" || plate == null) {
+
+    }
   }
 }
