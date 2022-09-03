@@ -1,13 +1,13 @@
-<form [formGroup]="formGroup" >
-  <div>
+<form class="font" [formGroup]="formGroup" >
+  <div class="form">
     <div>
       <label>Plate</label>
     </div>
     <div class="input-place">
-      <input formControlName="plate" placeholder="Inform a plate">
+      <input formControlName="plate" placeholder="Inform a plate" required>
     </div>
     <div class="button-insert">
-      <button (click)="insert()">Insert</button>
+      <button class="button" type="button" [disabled]="formGroup.invalid" (click)="insert()">Insert</button>
     </div>
   </div>
 </form>
