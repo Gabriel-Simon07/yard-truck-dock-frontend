@@ -4,6 +4,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { InformPlateModule } from './inform-plate/inform-plate.module';
+import { RegistrationFormModule } from './registration-form/registration-form.module';
 
 @NgModule({
   declarations: [
@@ -14,6 +15,7 @@ import { InformPlateModule } from './inform-plate/inform-plate.module';
     AppRoutingModule,
     InformPlateModule,
     HttpClientModule,
+    RegistrationFormModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,20 @@
+<form [formGroup]="formGroup" >
+    <div class="form">
+        <div>
+          <label>Registration Form</label>
+        </div>
+        <div class="input-place">
+          <input formControlName="plate" placeholder="Inform a plate" required>
+        </div>
+        <div>
+            <input formControlName="color" placeholder="Inform a color" required>
+        </div>
+        <div>
+            <input formControlName="mark" placeholder="Inform a mark" required>
+        </div>
+        <div>
+            <input formControlName="driver-name" placeholder="Inform the driver name" required>
+        </div>
+        <button class="button" type="button" [disabled]="formGroup.invalid" (click)="save()">Save</button>
+    </div>
+</form>

@@ -22,4 +22,9 @@ export class InformPlateComponent implements OnInit {
     const plate = this.formGroup.get('plate')?.value;
     return this.informPlateService.inserirPlaca(plate).subscribe();
   }
+
+  public validateLengthPlate(): string {
+    
+    return "null";
+  }
 }
