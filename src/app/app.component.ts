@@ -1,6 +1,4 @@
 import { Component } from '@angular/core';
-import { InformPlate } from './inform-plate/interfaces/inform-plate';
-import { InformPlateService } from './inform-plate/services/inform-plate.service';
 
 @Component({
   selector: 'app-root',
