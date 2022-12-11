@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { FormGroup } from "@angular/forms";
+import { FormBuilder, FormGroup } from "@angular/forms";
 
 @Component({
   selector: 'app-registration-form',
@@ -8,9 +8,18 @@ import { FormGroup } from "@angular/forms";
 export class RegistrationFormComponent implements OnInit {
     formGroup!: FormGroup;
     
-    ngOnInit(): void {
+  constructor(private formBuilder: FormBuilder){}
 
+    ngOnInit(): void {
+      this.formGroup = this.formBuilder.group({
+        plate:[undefined],
+        mark:[undefined],
+        color:[undefined],
+        driver_name:[undefined],
+      });
     }
+
+    
 
     public save() {
       console.log("SAVE!!!");

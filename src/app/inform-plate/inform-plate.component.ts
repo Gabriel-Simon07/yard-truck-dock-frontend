@@ -18,8 +18,22 @@ export class InformPlateComponent implements OnInit {
     });
   }
 
+  public formatPlate(plate: any) {
+    console.log(plate);
+    const plate1 = plate.toUpperCase().trimStart().trimEnd().trim();
+    console.log(plate1);
+    return plate1;
+  }
+
   public insert() {
     const plate = this.formGroup.get('plate')?.value;
-    return this.informPlateService.inserirPlaca(plate).subscribe();
+    const plateFormated = this.formatPlate(plate);
+    return this.informPlateService.insertPlate(plateFormated).subscribe(() => {
+      console.log("Processing....");
+    });
+  }
+
+  public findPlateById(id: number) {
+    return this.informPlateService.findPlateById(id).subscribe();
   }
 }

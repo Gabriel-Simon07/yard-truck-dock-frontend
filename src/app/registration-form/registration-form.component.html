@@ -1,20 +1,18 @@
-<form [formGroup]="formGroup" >
-    <div class="form">
+<form [formGroup]="formGroup">
         <div>
           <label>Registration Form</label>
         </div>
-        <div class="input-place">
+        <div class="input-generic">
           <input formControlName="plate" placeholder="Inform a plate" required>
         </div>
-        <div>
+        <div class="input-generic">
             <input formControlName="color" placeholder="Inform a color" required>
         </div>
-        <div>
+        <div class="input-generic">
             <input formControlName="mark" placeholder="Inform a mark" required>
         </div>
-        <div>
-            <input formControlName="driver-name" placeholder="Inform the driver name" required>
+        <div class="input-generic">
+            <input formControlName="driver_name" placeholder="Inform the driver name" required>
         </div>
         <button class="button" type="button" [disabled]="formGroup.invalid" (click)="save()">Save</button>
-    </div>
 </form>

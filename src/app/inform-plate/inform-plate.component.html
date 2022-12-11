@@ -5,13 +5,13 @@
     </div>
     <div class="input-place">
       <input formControlName="plate" placeholder="Inform a plate">
+      <div class="error">
+        <span *ngIf="formGroup.get('plate')?.errors?.['minlength'] ||
+        formGroup.get('plate')?.errors?.['maxlength']">Only 7 digits are allowed for the license plate</span>
+      </div>
     </div>
     <div class="button-insert">
       <button class="button" type="button" [disabled]="formGroup.invalid" (click)="insert()">Insert</button>
-      <div class="error">
-        <span *ngIf="formGroup.get('plate')?.errors?.['minlength'] || 
-        formGroup.get('plate')?.errors?.['maxlength']">Only 7 digits are allowed for the license plate</span>
-      </div>
     </div>
   </div>
 </form>

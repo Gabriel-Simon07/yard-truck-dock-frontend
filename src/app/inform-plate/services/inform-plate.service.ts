@@ -8,7 +8,11 @@ import { InformPlate } from "../interfaces/inform-plate";
 export class InformPlateService {
   constructor(private httpClient: HttpClient) {}
 
-  public inserirPlaca(plate: InformPlate) {
+  public insertPlate(plate: InformPlate) {
     return this.httpClient.post<InformPlate>("http://localhost:8080/plate", {plate});
+  }
+
+  public findPlateById(id: number) {
+    return this.httpClient.get<InformPlate>(`http://localhost:8080/plate/${id}`);
   }
 }
