@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { FormBuilder, FormGroup } from "@angular/forms";
+import { ResgistrationFormService } from "./services/registration-form.service";
 
 @Component({
   selector: 'app-registration-form',
@@ -7,8 +8,8 @@ import { FormBuilder, FormGroup } from "@angular/forms";
 })
 export class RegistrationFormComponent implements OnInit {
     formGroup!: FormGroup;
-    
-  constructor(private formBuilder: FormBuilder){}
+
+  constructor(private formBuilder: FormBuilder, private registrationService: ResgistrationFormService) {}
 
     ngOnInit(): void {
       this.formGroup = this.formBuilder.group({
@@ -19,10 +20,8 @@ export class RegistrationFormComponent implements OnInit {
       });
     }
 
-    
-
-    public save() {
-      console.log("SAVE!!!");
-      
+    public insert() {
+      const formulario = this.formGroup;
+      return this.registrationService.insert(formulario).subscribe();
     }
 }
