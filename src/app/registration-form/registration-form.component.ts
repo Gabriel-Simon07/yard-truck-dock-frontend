@@ -7,21 +7,21 @@ import { ResgistrationFormService } from "./services/registration-form.service";
   templateUrl: './registration-form.component.html'
 })
 export class RegistrationFormComponent implements OnInit {
-    formGroup!: FormGroup;
+  formGroup!: FormGroup;
 
   constructor(private formBuilder: FormBuilder, private registrationService: ResgistrationFormService) {}
 
-    ngOnInit(): void {
-      this.formGroup = this.formBuilder.group({
-        plate:[undefined],
-        mark:[undefined],
-        color:[undefined],
-        driver_name:[undefined],
-      });
-    }
+  ngOnInit(): void {
+    this.formGroup = this.formBuilder.group({
+      plate:[undefined],
+      mark:[undefined],
+      color:[undefined],
+      driver_name:[undefined],
+    });
+  }
 
-    public insert() {
-      const formulario = this.formGroup;
-      return this.registrationService.insert(formulario).subscribe();
-    }
+  public insert() {
+    const formulario = this.formGroup.value;
+    return this.registrationService.insert(formulario).subscribe();
+  }
 }
